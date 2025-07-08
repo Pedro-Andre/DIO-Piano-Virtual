@@ -20,6 +20,14 @@ body {
   font-size: 1.6rem;
 }
 
+header {
+  width: 100%;
+  max-width: 78rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 header .column {
   display: flex;
   align-items: center;
@@ -77,12 +85,6 @@ header .column span {
   background: #111;
 }
 
-.container header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .piano-keys {
   display: flex;
   justify-content: center;
@@ -138,4 +140,36 @@ header .column span {
 
 .piano-keys .key.hide span {
   display: none;
+}
+
+#rotate-warning {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: #111;
+  color: #eee;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 999;
+}
+
+@media screen and (orientation: portrait) {
+  #rotate-warning {
+    display: flex;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #rotate-warning {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  header h2 {
+    display: none;
+  }
 }
